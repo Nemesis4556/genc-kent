@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --ivory: #f6f1e8;
+  --ivory-deep: #efe8db;
+  --beige: #e6dcc9;
+  --charcoal: #2a241d;
+  --charcoal-soft: #59503f;
+  --walnut: #8a5a38;
+  --walnut-deep: #6e4527;
+  --bronze: #96805c;
+  --white: #fffdf8;
+  --line: rgba(42, 36, 29, 0.12);
+  --line-strong: rgba(42, 36, 29, 0.22);
+
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --container: 1360px;
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.photo {
+  filter: saturate(0.92) contrast(1.04) sepia(0.05) brightness(1.01);
+}
+
+.photo-frame {
+  background: var(--white);
+  padding: clamp(8px, 1vw, 14px);
+  border: 1px solid var(--line);
+}
+
+.photo-frame .photo-inner {
+  overflow: hidden;
+  position: relative;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--charcoal-soft);
+  font-weight: 500;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  border: 1px solid var(--charcoal);
+  background: transparent;
+  color: var(--charcoal);
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.btn-solid {
+  background: var(--charcoal);
+  color: var(--ivory);
+  border-color: var(--charcoal);
+}
+
+.btn-solid:hover {
+  background: var(--walnut-deep);
+  border-color: var(--walnut-deep);
+  color: var(--white);
+}
+
+.btn-ghost {
+  border-color: var(--line-strong);
+}
+
+.btn-ghost:hover {
+  border-color: var(--charcoal);
+  background: transparent;
+  color: var(--charcoal);
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+::selection {
+  background: var(--walnut);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--walnut);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
